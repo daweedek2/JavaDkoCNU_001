@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>DKO CNU</title>
+    <title>DKO CNU home</title>
 </head>
 <body>
-<p>Welcome to DKO CNU test app!</p>
+<h1>Welcome to DKO CNU test app!</h1>
+
+<p>
+    <a th:href="@{/add}">Create new animal</a>
+</p>
+
+<p>
+    <a th:href="@{/list}">Display all animals</a>
+</p>
+<div>
+
+</div>
 </body>
 </html>
