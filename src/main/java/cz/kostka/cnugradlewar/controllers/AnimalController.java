@@ -12,4 +12,16 @@ public class AnimalController {
         return "index";
     }
 
+    @GetMapping(value = "/list")
+    public String listView ()
+    {
+        return "list";
+    }
+
+    @GetMapping(value = "/add")
+    public String addView ()
+    {
+        return "add";
+    }
+
 }
