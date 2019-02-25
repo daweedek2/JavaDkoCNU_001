@@ -47,7 +47,6 @@ public class AnimalController {
         {
             return "error";
         }
-
         animalRepo.save(animal);
         return "success";
     }
