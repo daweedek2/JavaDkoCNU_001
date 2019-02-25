@@ -7,17 +7,17 @@
 <body>
 <h2>Add new Animal</h2>
 
-<form action="">
+<form th:action="@{/add}" th:object="${animal}" method="post">
     Animal name:<br>
-    <input type="text" name="name" >
+    <input type="text" th:field="*{name}" >
     <br>
     Animal description:<br>
-    <input type="text" name="description">
+    <input type="text" th:field="*{description}">
     <br><br>
     <input type="submit" value="Save">
-    <p>
-        <a th:href="@{/}">Back</a>
-    </p>
 </form>
+<p>
+    <a th:href="@{/}">Back</a>
+</p>
 </body>
 </html>
