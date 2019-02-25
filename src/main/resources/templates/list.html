@@ -5,18 +5,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<!--<table border="1">-->
-    <!--<tr>-->
-        <!--<td>ID</td>-->
-        <!--<td>Name</td>-->
-        <!--<td>Description</td>-->
-    <!--</tr>-->
-    <!--<tr th:each="animal : ${animals}">-->
-        <!--<td th:text="${animal.id}">Onions</td>-->
-        <!--<td th:text="${animal.name}">2.41</td>-->
-        <!--<td th:text="${prod.description}"></td>-->
-    <!--</tr>-->
-<!--</table>-->
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Description</td>
+    </tr>
+    <tr th:each="animal : ${animals}">
+        <td th:text="${animal.id}"> ID </td>
+        <td th:text="${animal.name}"> NAME </td>
+        <td th:text="${animal.description}"> DESC </td>
+    </tr>
+</table>
 
 <p>
     <a th:href="@{/}">Back</a>
