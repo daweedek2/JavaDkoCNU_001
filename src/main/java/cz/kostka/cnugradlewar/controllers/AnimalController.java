@@ -26,8 +26,9 @@ public class AnimalController {
     }
 
     @GetMapping(value = "/list")
-    public String listView ()
+    public String listView (Model model)
     {
+        model.addAttribute("animals", animalRepo.findAll());
         return "list";
     }
 
