@@ -1,16 +1,23 @@
 package cz.kostka.cnugradlewar.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Animal {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String description;
+
     public Integer getId() {
         return id;
     }
