@@ -2,6 +2,7 @@ package cz.kostka.cnugradlewar.controllers;
 
 import cz.kostka.cnugradlewar.entity.Animal;
 import cz.kostka.cnugradlewar.repository.AnimalRepository;
+import cz.kostka.cnugradlewar.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AnimalController {
 
-    private final AnimalRepository animalRepo;
+    private final AnimalService animalService;
 
     @Autowired
-    public AnimalController(AnimalRepository animalRepo) {
-        this.animalRepo = animalRepo;
+    public AnimalController(AnimalService animalService) {
+        this.animalService = animalService;
     }
 
     @GetMapping(value = "/")
@@ -29,14 +30,15 @@ public class AnimalController {
     @GetMapping(value = "/list")
     public String listView (Model model)
     {
-        model.addAttribute("animals", animalRepo.findAll());
+        model.addAttribute("animals", animalService.listAll());
         return "list";
     }
 
     @GetMapping(value = "/add")
     public String addView (Model model)
     {
-        model.addAttribute("animal", new Animal());
+        Animal animal = new Animal();
+        model.addAttribute("animal", animal);
         return "add";
     }
 
@@ -47,7 +49,7 @@ public class AnimalController {
         {
             return "error";
         }
-        animalRepo.save(animal);
+        animalService.add(animal);
         return "success";
     }
 }
