@@ -1,7 +1,6 @@
 package cz.kostka.cnugradlewar.controllers;
 
 import cz.kostka.cnugradlewar.entity.Animal;
-import cz.kostka.cnugradlewar.repository.AnimalRepository;
 import cz.kostka.cnugradlewar.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
