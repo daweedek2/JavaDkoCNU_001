@@ -1,4 +1,4 @@
-package cz.kostka.cnugradlewar.controllers;
+package cz.kostka.cnugradlewar.controller;
 
 import cz.kostka.cnugradlewar.entity.Animal;
 import cz.kostka.cnugradlewar.service.AnimalService;
@@ -48,7 +48,10 @@ public class AnimalController {
         {
             return "error";
         }
-        animalService.add(animal);
-        return "success";
+        else {
+            animalService.add(animal);
+            return "success";
+        }
     }
+
 }

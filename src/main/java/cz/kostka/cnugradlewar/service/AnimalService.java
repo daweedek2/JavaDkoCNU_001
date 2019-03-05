@@ -11,6 +11,7 @@ import java.util.List;
 public class AnimalService {
 
     private final AnimalRepository animalRepo;
+    private NullPointerException exception;
 
     @Autowired
     public AnimalService(AnimalRepository animalRepo) {
@@ -18,7 +19,11 @@ public class AnimalService {
     }
 
     public Animal add (Animal animal) {
-        return animalRepo.save(animal);
+        if (animal.getDescription().equals("")){
+            throw exception;
+        }
+        else animalRepo.save(animal);
+        return animal;
     }
 
     public List<Animal> listAll () {

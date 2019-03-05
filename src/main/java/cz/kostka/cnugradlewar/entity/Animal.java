@@ -40,4 +40,18 @@ public class Animal {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Animal(){
+    }
+
+    public Animal(Integer id, String name, String description){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Animal(String name, String description){
+        this.name = name;
+        this.description = description;
+    }
 }
